@@ -9,7 +9,16 @@ function App() {
 
   const addValue = () => {
     if(counter < 20){
-      setCounter(counter + 1)
+      // setCounter(counter + 1)
+      setCounter(prevCounter => prevCounter + 1)
+      // setCounter(counter + 1)
+      // setCounter(counter + 1)
+      // setCounter(counter + 1)
+      //iin teeno ka batch banega and fibre ke through yek hi mana jayega
+      //agar isko karna hi hai toh previous state lena parega also setCounter apne andar yek call back leta hai 
+      setCounter(prevCounter => prevCounter + 1)
+      setCounter(prevCounter => prevCounter + 1)
+      setCounter(prevCounter => prevCounter + 1)
     }
     else{
       alert('above 20 not possible')
@@ -18,7 +27,7 @@ function App() {
   }
   const removeValue = () => {
     if (counter > 0) {
-      setCounter(counter - 1)
+      setCounter(prevCounter => prevCounter - 1)
     }
     else{
       alert('below 0 is not possible')
